@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="GB2312"?>  
 
 <project name="ant-jmeter-test" default="run" basedir=".">
-    <!-- ÐèÒª¸Ä³É×Ô¼º±¾µØµÄ Jmeter Ä¿Â¼-->  
+
+	<tstamp>  
+		<format property="TODAY_CN" pattern="yyyy-MM-dd" locale="zh"/>  
+	</tstamp> 
+
+    <!-- éœ€è¦æ”¹æˆè‡ªå·±æœ¬åœ°çš„ Jmeter ç›®å½•-->  
     <property name="jmeter.home" value="D:\Program Files\apache-jmeter-3.1" />
     <property name="report.title" value="Mtime_interface"/>
-    <!-- jmeterÉú³Éjtl¸ñÊ½µÄ½á¹û±¨¸æµÄÂ·¾¶--> 
-    <property name="jmeter.result.jtl.dir" value="E:\test-interface\report" />
-    <!-- jmeterÉú³Éhtml¸ñÊ½µÄ½á¹û±¨¸æµÄÂ·¾¶-->
-    <property name="jmeter.result.html.dir" value="E:\test-interface\report" />
-    <!-- Éú³ÉµÄ±¨¸æµÄÇ°×º-->  
+    <!-- jmeterç”Ÿæˆjtlæ ¼å¼çš„ç»“æžœæŠ¥å‘Šçš„è·¯å¾„--> 
+    <property name="jmeter.result.jtl.dir" value="D:\Program Files (x86)\Jenkins\workspace\test-interface\report" />
+    <!-- jmeterç”Ÿæˆhtmlæ ¼å¼çš„ç»“æžœæŠ¥å‘Šçš„è·¯å¾„-->
+    <property name="jmeter.result.html.dir" value="D:\Program Files (x86)\Jenkins\workspace\test-interface\report" />
+    <!-- ç”Ÿæˆçš„æŠ¥å‘Šçš„å‰ç¼€-->  
     <property name="ReportName" value="Mtime_interface" />
     <property name="jmeter.result.jtlName" value="${jmeter.result.jtl.dir}/${ReportName}.jtl" />
     <property name="jmeter.result.htmlName" value="${jmeter.result.html.dir}/${ReportName}.html" />
@@ -21,7 +26,7 @@
     <target name="test">
         <taskdef name="jmeter" classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask" />
         <jmeter jmeterhome="${jmeter.home}" resultlog="${jmeter.result.jtlName}">
-            <!-- ÉùÃ÷ÒªÔËÐÐµÄ½Å±¾"*.jmx"Ö¸°üº¬´ËÄ¿Â¼ÏÂµÄËùÓÐjmeter½Å±¾-->
+            <!-- å£°æ˜Žè¦è¿è¡Œçš„è„šæœ¬"*.jmx"æŒ‡åŒ…å«æ­¤ç›®å½•ä¸‹çš„æ‰€æœ‰jmeterè„šæœ¬-->
             <testplans dir="E:\test-interface" includes="*.jmx" />
             
             <property name="jmeter.save.saveservice.output_format" value="xml"/>
@@ -47,7 +52,7 @@
 
        </xslt>
 
-                <!-- ÒòÎªÉÏÃæÉú³É±¨¸æµÄÊ±ºò£¬²»»á½«Ïà¹ØµÄÍ¼Æ¬Ò²Ò»Æð¿½±´ÖÁÄ¿±êÄ¿Â¼£¬ËùÒÔ£¬ÐèÒªÊÖ¶¯¿½±´ --> 
+                <!-- å› ä¸ºä¸Šé¢ç”ŸæˆæŠ¥å‘Šçš„æ—¶å€™ï¼Œä¸ä¼šå°†ç›¸å…³çš„å›¾ç‰‡ä¹Ÿä¸€èµ·æ‹·è´è‡³ç›®æ ‡ç›®å½•ï¼Œæ‰€ä»¥ï¼Œéœ€è¦æ‰‹åŠ¨æ‹·è´ --> 
         <copy todir="${jmeter.result.html.dir}">
             <fileset dir="${jmeter.home}/extras">
                 <include name="collapse.png" />
