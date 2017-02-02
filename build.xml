@@ -60,3 +60,5 @@
             </fileset>
         </copy>
     </target>
+
+</project>
