@@ -2439,7 +2439,7 @@
             <elementProp name="MailerResultCollector.mailer_model" elementType="MailerModel">
               <stringProp name="MailerModel.successLimit">0</stringProp>
               <stringProp name="MailerModel.failureLimit">0</stringProp>
-              <stringProp name="MailerModel.failureSubject"></stringProp>
+              <stringProp name="MailerModel.failureSubject">广告（/live-ad/find）</stringProp>
               <stringProp name="MailerModel.fromAddress">470875079@qq.com</stringProp>
               <stringProp name="MailerModel.smtpHost">smtp.qq.com</stringProp>
               <stringProp name="MailerModel.successSubject"></stringProp>
@@ -2485,55 +2485,6 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <MailerResultCollector guiclass="MailerVisualizer" testclass="MailerResultCollector" testname="邮件观察仪" enabled="true">
-          <boolProp name="ResultCollector.error_logging">true</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>true</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <elementProp name="MailerResultCollector.mailer_model" elementType="MailerModel">
-            <stringProp name="MailerModel.successLimit">0</stringProp>
-            <stringProp name="MailerModel.failureLimit">0</stringProp>
-            <stringProp name="MailerModel.failureSubject">广告（/live-ad/find）</stringProp>
-            <stringProp name="MailerModel.fromAddress">470875079@qq.com</stringProp>
-            <stringProp name="MailerModel.smtpHost">smtp.qq.com</stringProp>
-            <stringProp name="MailerModel.successSubject"></stringProp>
-            <stringProp name="MailerModel.addressie">470875079@qq.com</stringProp>
-            <stringProp name="MailerModel.smtpPort">465</stringProp>
-            <stringProp name="MailerModel.login">470875079@qq.com</stringProp>
-            <stringProp name="MailerModel.password">drweusyxtdmzcahb</stringProp>
-            <stringProp name="MailerModel.authType">SSL</stringProp>
-          </elementProp>
-          <stringProp name="filename"></stringProp>
-        </MailerResultCollector>
         <hashTree/>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
